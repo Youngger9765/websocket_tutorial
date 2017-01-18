@@ -21,48 +21,46 @@
             onOpen(evt)
          };
 
-         websocket.onmessage = function(evt) {
-            onMessage(evt)
-         };
+         // websocket.onmessage = function(evt) {
+         //    onMessage(evt)
+         // };
 
-         websocket.onerror = function(evt) {
-            onError(evt)
-         };
+         // websocket.onerror = function(evt) {
+         //    onError(evt)
+         // };
 
-         websocket.onclose = function(evt) {
-            onClose(evt)
-         };
+         // websocket.onclose = function(evt) {
+         //    onClose(evt)
+         // };
       }
 
       function onOpen(evt) {
          writeToScreen("CONNECTED");
-         // send a message!
-         // doSend("WebSocket rocks");
       }
 
-      function onClose(evt) {
-         writeToScreen("DISCONNECTED");
-      }
+      // function onClose(evt) {
+      //    writeToScreen("DISCONNECTED");
+      // }
 
-      function onError(evt) {
-         writeToScreen('<span style = "color: red;">ERROR:</span> ' + evt.data);
-      }
+      // function onError(evt) {
+      //    writeToScreen('<span style = "color: red;">ERROR:</span> ' + evt.data);
+      // }
 
-      function onMessage(evt) {
-         writeToScreen('<span style = "color: blue;">RESPONSE: ' +
-            evt.data+'</span>');
-         // websocket.close();
-      }
+      // function onMessage(evt) {
+      //    writeToScreen('<span style = "color: blue;">RESPONSE: ' +
+      //       evt.data+'</span>');
+      //    // websocket.close();
+      // }
 
-      function doSend() {
-         var input = $('input')[0]
-         var message = input.value;
-         writeToScreen("SENT: " + message);
-         websocket.send(message);
+      // function doSend() {
+      //    var input = $('input')[0]
+      //    var message = input.value;
+      //    writeToScreen("SENT: " + message);
+      //    websocket.send(message);
 
-         // clear value after sending msg
-         input.value = "";
-      }
+      //    // clear value after sending msg
+      //    input.value = "";
+      // }
 
       function writeToScreen(message) {
          var pre = document.createElement("p");
@@ -75,14 +73,13 @@
 
    <h2>WebSocket Test</h2>
    <div class="row">
-      <div class="col-md-6">
+     <!--  <div class="col-md-6">
         Message: <input value="" id="input">
         <button id="submit" onclick="doSend()"> send</button>
-      </div>
+      </div> -->
       <div class="col-md-6">
          <div id = "output"></div>
       </div>
    </div>
-   
 
 </html>
